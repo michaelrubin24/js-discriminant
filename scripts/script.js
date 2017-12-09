@@ -12,13 +12,13 @@ function outputEquation(coeff_first, coeff_second, coeff_third){
 }
 
 function findDiscriminant(coeff_first, coeff_second, coeff_third){
-  if(isNaN(coeff_first || coeff_second || coeff_third)){
+  var COEFF_OF_DISCRIMINANT = 4;
+  if(isNaN(+coeff_first) || isNaN(+coeff_second) || isNaN(+coeff_third)){
     return "Неправильный ввод";
   }
   else if(coeff_first == null || coeff_second == null || coeff_third == null || coeff_first == 0){
     return "Нехватает значений";
   }else{
-    var COEFF_OF_DISCRIMINANT = 4;
     return Math.pow(coeff_second, 2) - COEFF_OF_DISCRIMINANT * coeff_first * coeff_third;
   }
 }
